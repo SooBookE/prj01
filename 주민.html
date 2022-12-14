@@ -1,33 +1,104 @@
-<body>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>웹페이지 수동(주민)</title>
+    <style>
+      /* tab button */
+      .tab {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 20%;
+      }
+
+      /* change background color when mouse over */
+      .tab:hover {
+        background-color: #777;
+      }
+
+      /* default content */
+      .content {
+        color: white;
+        display: block;
+        padding: 50px;
+        text-align: center;
+      }
+
+      /* Style each tab content individually */
+      /* #About {
+        background-color: tomato;
+      } */
+      /* #Products {
+        background-color: darkolivegreen;
+      }
+      #Technology {
+        background-color: dodgerblue;
+      }
+      #Downloads {
+        background-color: orange;
+      } */
+    </style>
+  </head>
+
+  <body>
     <div id="About" class="content">
       <h1>About</h1>
       <p>Custom Software Development Company</p>
     </div>
-
-    <div id="Products" class="content">
-      <h1>Products</h1>
-      <p>
-        Building tailored software to address critical needs of global
-        enterprises.
-      </p>
-    </div>
-
-    <div id="Technology" class="content">
-      <h1>Technology</h1>
-      <p>Machine Learning, Artificial Intelligent, Cloud Platform.</p>
-    </div>
-
-    <div id="Downloads" class="content">
-      <h1>Downloads</h1>
-      <p>You can download a free 10 days trial.</p>
-    </div>
+    
 
     <button id="default" class="tab">About</button>
-    <button class="tab">Products</button>
-    <button class="tab">Technology</button>
-    <button class="tab">Downloads</button>
+    <button id="pro" class="tab">Products</button>
+    <button id="tec" class="tab">Technology</button>
+    <button id="don" class="tab">Downloads</button>
+    <button id="et" class="tab">ETC</button>
 
-    <script></script>
+    <script>
+      document.addEventListener("DOMContentLoaded",()=>{
   
+        const aa = document.getElementsByClassName('tab');
+        const bb = document.getElementById('About');
+        const h1 = document.querySelector('h1')
+        const p = document.querySelector('p')
+        
+        aa[0].addEventListener('click',()=>{
+          // aa[0].style.backgroundColor = 'tomato';
+          h1.textContent = 'About'
+          p.textContent = 'Custom Software Development Company'
+          bb.style.backgroundColor= 'tomato';
+        })
+        aa[1].addEventListener('click',()=>{
+          // aa[1].style.backgroundColor = 'darkolivegreen';
+          h1.textContent = 'Products'
+          p.textContent = 'Building tailored software to address critical needs of global enterprises.'
+          bb.style.backgroundColor= 'darkolivegreen';
+        })
+        aa[2].addEventListener('click',()=>{
+          h1.textContent = 'Technology'
+          p.textContent = 'Machine Learning, Artificial Intelligent, Cloud Platform.'
+          bb.style.backgroundColor= 'dodgerblue';
+        })
+        aa[3].addEventListener('click',()=>{
+          h1.textContent = 'Downloads'
+          p.textContent = 'You can download a free 10 days trial.'
+          bb.style.backgroundColor= 'orange';
+        })
+        aa[4].addEventListener('click',()=>{
+          h1.textContent = 'ETC'
+          p.textContent = 'Everything is fine.'
+          bb.style.backgroundColor= 'pink';
+        })
 
-</body>
+
+      });
+    </script>
+  </body>
+</html>
