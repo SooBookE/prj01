@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>웹페이지 수동</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+      /* tab button */
+      body,html{
+        height: 100%;
+      }
+      .tab {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+      }
+      
+      /* change background color when mouse over */
+      .tab:hover {
+        background-color: #777;
+      }
+      span{
+        display: flex;
+      }
+
+      /* default content */
+      .content {
+        height: 200px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 50px;
+        text-align: center;
+      }
+      h1{
+        font-size: 3rem;
+      }
+
+      /* Style each tab content individually */
+      #About {
+        background-color: tomato;
+      }
+      #Products {
+        background-color: darkolivegreen;
+      }
+      #Technology {
+        background-color: dodgerblue;
+      }
+      #Downloads {
+        background-color: orange;
+      }
+      #Etc {
+        background-color: pink;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded',()=>{
+        const buttonPicker = document.getElementsByClassName('tab');
+        const div = document.querySelector('div');
+        const h1 = document.querySelector('h1');
+        const p = document.querySelector('p');
+
+        buttonPicker[0].addEventListener('click',()=>{
+          div.setAttribute("id","About");
+          h1.textContent='About';
+          p.textContent='Custom Software Development Company';
+          setting('About',0,'tomato');
+        })
+        buttonPicker[1].addEventListener('click',()=>{
+          div.setAttribute("id","Products");
+          h1.textContent='Products';
+          p.textContent='Building tailored software to address critical needs of global enterprises.';
+          setting('Products',1,'darkolivegreen');
+        })
+        buttonPicker[2].addEventListener('click',()=>{
+          div.setAttribute("id","Technology");
+          h1.textContent='Technology';
+          p.textContent='Machine Learning, Artificial Intelligent, Cloud Platform.';
+          setting('Technology',2,'dodgerblue');
+        })
+        buttonPicker[3].addEventListener('click',()=>{
+          div.setAttribute("id","Downloads");
+          h1.textContent='Downloads';
+          p.textContent='You can download a free 10 days trial.';
+          setting('Downloads',3,'orange');
+        })
+        buttonPicker[4].addEventListener('click',()=>{
+          div.setAttribute("id","Etc");
+          h1.textContent='Etc';
+          p.textContent='Everything is fine.';
+          setting('Etc',4,'pink');
+        })
+
+        function setting(txt,idx,color){
+          if(h1.textContent==txt){
+            for(const btnIdx in buttonPicker){
+              if(btnIdx==idx){
+                buttonPicker[idx].style.backgroundColor=color;
+              }else{
+                buttonPicker[btnIdx].style.backgroundColor='#555';
+              }
+            }
+          }
+        }
+
+        buttonPicker[0].style.backgroundColor = "tomato";
+        for(let i=1; i<buttonPicker ; i++){
+          buttonPicker[i].style.backgroundColor= "#555";
+        }
+      })
+    </script>
+  </head>
+
+  <body>
+    <div id="About" class="content">
+      <h1>About</h1>
+      <p>Custom Software Development Company</p>
+    </div>
+
+    <span>
+      <button class="tab">About</button>
+      <button class="tab">Products</button>
+      <button class="tab">Technology</button>
+      <button class="tab">Downloads</button>
+      <button class="tab">Etc</button>
+    </span>
+
+    <script></script>
+  </body>
+</html>
