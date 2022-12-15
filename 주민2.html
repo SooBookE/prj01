@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>웹페이지 자동(주민)</title>
+</head>
+  <style>
+    .tab{
+      background-color:  #555;
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-size: 17px;
+      width: 20%;
+    }
+    /* .tab:hover {
+        background-color: #777;
+      } */
+    #main{
+      color : #fff;
+      display: block;
+      padding: 50px;
+      text-align: center;
+    }
+  </style>
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      const div0 = document.createElement("div");
+      const div1 = document.createElement("div");
+      const bt1 = document.createElement("button");
+      const bt2 = document.createElement("button");
+      const bt3 = document.createElement("button");
+      const bt4 = document.createElement("button");
+      const bt5 = document.createElement("button");
+      const h1 = document.createElement("h1");
+      const p = document.createElement("p");
+      document.body.append(div0);
+      div0.append(p,h1);
+      document.body.append(div1);
+      div1.append(bt1,bt2,bt3,bt4,bt5);
+      div0.setAttribute('id','main');
+      div1.setAttribute('class','over');
+      bt1.setAttribute('class','tab');
+      bt1.setAttribute('id','ID');
+      bt2.setAttribute('class','tab');
+      bt3.setAttribute('class','tab');
+      bt4.setAttribute('class','tab');
+      bt5.setAttribute('class','tab');
+      bt1.textContent = 'About'
+      bt2.textContent = 'Products'
+      bt3.textContent = 'Technology'
+      bt4.textContent = 'Downloads'
+      bt5.textContent = 'ETC'
+
+      const tab = document.getElementsByClassName('tab')
+      const dd = document.getElementsByClassName('over')
+      const id = document.getElementById('main');
+      tab[0].addEventListener('click',()=>{
+        tab[0].style.backgroundColor = 'tomato';
+        tab[1].style.backgroundColor = '#555';
+        tab[2].style.backgroundColor = '#555';
+        tab[3].style.backgroundColor = '#555';
+        tab[4].style.backgroundColor = '#555';
+        h1.textContent = 'About'
+        p.textContent = 'Custom Software Development Company'
+        id.style.backgroundColor = 'tomato'
+      });
+      tab[1].addEventListener('click',()=>{
+        tab[0].style.backgroundColor = '#555';
+        tab[1].style.backgroundColor = 'darkolivegreen';
+        tab[2].style.backgroundColor = '#555';
+        tab[3].style.backgroundColor = '#555';
+        tab[4].style.backgroundColor = '#555';
+        h1.textContent = 'Products'
+        p.textContent = 'Building tailored software to address critical needs of global enterprises.'
+        id.style.backgroundColor = 'darkolivegreen'
+      });
+      tab[2].addEventListener('click',()=>{
+        tab[0].style.backgroundColor = '#555';
+        tab[1].style.backgroundColor = '#555';
+        tab[2].style.backgroundColor = 'dodgerblue';
+        tab[3].style.backgroundColor = '#555';
+        tab[4].style.backgroundColor = '#555';
+        h1.textContent = 'Technology'
+        p.textContent = 'Machine Learning, Artificial Intelligent, Cloud Platform.'
+        id.style.backgroundColor = 'dodgerblue'
+      });
+      tab[3].addEventListener('click',()=>{
+        tab[0].style.backgroundColor = '#555';
+        tab[1].style.backgroundColor = '#555';
+        tab[2].style.backgroundColor = '#555';
+        tab[3].style.backgroundColor = 'orange';
+        tab[4].style.backgroundColor = '#555';
+        h1.textContent = 'Downloads'
+        p.textContent = 'You can download a free 10 days trial.'
+        id.style.backgroundColor = 'orange'
+      });
+      tab[4].addEventListener('click',()=>{
+        tab[0].style.backgroundColor = '#555';
+        tab[1].style.backgroundColor = '#555';
+        tab[2].style.backgroundColor = '#555';
+        tab[3].style.backgroundColor = '#555';
+        tab[4].style.backgroundColor = 'pink';
+        h1.textContent = 'ETC'
+        p.textContent = 'Everything is fine.'
+        id.style.backgroundColor = 'pink'
+      });
+
+      tab[0].addEventListener('mouseover',(event)=>{
+        tab[0].style.backgroundColor = '#777'
+        tab[0].addEventListener('mouseout',(event)=>{
+        tab[0].style.backgroundColor = '#555'
+        });
+      });
+
+      tab[1].addEventListener('mouseover',(event)=>{
+        tab[1].style.backgroundColor = '#777'
+        tab[1].addEventListener('mouseout',(event)=>{
+        tab[1].style.backgroundColor = '#555'
+        });
+      });
+
+      tab[2].addEventListener('mouseover',(event)=>{
+        tab[2].style.backgroundColor = '#777'
+        tab[2].addEventListener('mouseout',(event)=>{
+        tab[2].style.backgroundColor = '#555'
+        });
+      });
+
+      tab[3].addEventListener('mouseover',(event)=>{
+        tab[3].style.backgroundColor = '#777'
+        tab[3].addEventListener('mouseout',(event)=>{
+        tab[3].style.backgroundColor = '#555'
+        });
+      });
+
+      tab[4].addEventListener('mouseover',(event)=>{
+        tab[4].style.backgroundColor = '#777'
+        tab[4].addEventListener('mouseout',(event)=>{
+        tab[4].style.backgroundColor = '#555'
+        });
+      });
+
+    })
+  </script>
+</body>
+</html>
