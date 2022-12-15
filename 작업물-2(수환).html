@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>자동화로 만들어보자.</title>
-  <link rel="stylesheet" href="./reset.css">
+  <!-- <link rel="stylesheet" href="./reset.css"> -->
   <style>
     body,html{
       height: 100%;
@@ -67,10 +67,16 @@
       
       for(let i=0 ; i<tab.length ; i++){
         tab[i].addEventListener("click",()=>{
-          chg(col_list[i],tab_name[i],p_name[i], i);
+          chg(col_list[i], tab_name[i], p_name[i], i);
           for(let j=0 ; j<tab.length ; j++){
             if(i!=j){
               tab[j].style.backgroundColor='#555';
+              tab[j].addEventListener("mouseover",(e)=>{
+                e.currentTarget.style.backgroundColor='rgb(170,170,170)';
+              })
+              tab[j].addEventListener("mouseout",(e)=>{
+                e.currentTarget.style.backgroundColor='#555';
+              })
             }
           }
         })
@@ -81,6 +87,7 @@
         header.textContent = head;
         p.textContent = parag; 
       }
+      // 탭 눌렀을 때, 탭 색 유지하기 수정 시급!
       
     })
   </script>
